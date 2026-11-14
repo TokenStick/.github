@@ -54,7 +54,7 @@ These are targets for the first revision, not measured results. Benchmarks will 
 
 From top to bottom:
 
-- **Finned aluminum lid.** The fins are milled into the lid and a thermal pad couples the RK1828 to it, so the enclosure itself works as the heatsink. No fan is planned.
+- **Finned aluminum lid.** The fins are milled into the lid and a thermal pad couples the RK1828 to it, so the enclosure itself works as the heatsink. Passive cooling is the target; whether it is enough depends on the power budget, which is still open.
 - **Board.** A 6-layer PCB of about 85 × 35 mm. The RK1828 sits next to the data port, with the power stages along the rest of the board.
 - **Aluminum tray.** Carries the board on standoffs and closes the enclosure.
 
@@ -76,11 +76,29 @@ The renders show the intended form and layout. Dimensions, component placement a
 
 ## Status
 
-TokenStick is in the design phase.
+TokenStick is in the design phase. Nothing has been built or tested yet.
+
+**Done**
 
 - [x] Architecture and chip selection
 - [x] Bill of materials and board floorplan
-- [ ] Schematic and PCB layout
+- [x] RK1828 symbol and footprint (746 balls, generated from the datasheet pin list)
+- [x] Schematic for the USB-C data path, the USB PD power input and the 5 V buck
+- [x] First board placement: 85 × 35 mm, 6 layers
+- [x] USB section routed by hand in KiCad
+- [x] Enclosure concept and 3D renders
+- [x] Hardware files published in [tokenstick-hw](https://github.com/TokenStick/tokenstick-hw) under CERN-OHL-S v2
+
+**In progress**
+
+- [ ] Schematic for the RK1828 power rails, clock and reset
+- [ ] PCB layout beyond the USB section
+- [ ] Power and thermal budget for the enclosure
+
+The power rail design waits on current and sequencing figures from the chip vendor.
+
+**Next**
+
 - [ ] First prototypes and bring-up
 - [ ] Host runtime and local API
 - [ ] Published benchmarks

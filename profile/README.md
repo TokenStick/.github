@@ -1,0 +1,82 @@
+<p align="center">
+  <img src="./assets/banner.png" alt="TokenStick" width="100%">
+</p>
+
+<h3 align="center">A USB stick that runs LLMs locally</h3>
+
+<p align="center">
+  Plug it in, point your tools at a local endpoint, keep your data on your desk.
+</p>
+
+---
+
+## What is TokenStick?
+
+TokenStick is a USB-attached AI accelerator for running large language models on hardware you own. It adds dedicated inference compute to a laptop, mini PC, single-board computer or NAS, without a GPU, a free M.2 slot or a cloud account.
+
+The model runs entirely on the stick. Weights live in the accelerator's own memory, so the host keeps its RAM and CPU for everything else.
+
+## Why
+
+- **Private by default.** Prompts and documents never leave the machine.
+- **No GPU required.** Bring local inference to hardware that was never built for it.
+- **Works with what you already use.** The goal is a drop-in, OpenAI-compatible local endpoint, so existing clients and tools need no changes.
+- **Open.** Hardware design files and host software are intended to be published under open licenses.
+
+## Design targets (v1)
+
+| | |
+|---|---|
+| Accelerator | Rockchip RK1828 AI coprocessor |
+| Compute | 20 TOPS (INT8), mixed precision from INT4 to FP16 |
+| Memory | 5 GB in-package DRAM, dedicated to the model |
+| Model class | LLMs and VLMs up to roughly 7B parameters |
+| Host link | USB 3.0 over USB-C |
+| Power | Separate USB-C input, USB Power Delivery |
+| Cooling | Passive, aluminum enclosure |
+| Use | Home and office |
+
+These are targets for the first revision, not measured results. Benchmarks will be published once prototypes are running.
+
+## How it works
+
+```
+  Your apps  ──►  local API endpoint  ──►  TokenStick runtime  ──►  USB  ──►  TokenStick
+ (chat, IDE,       (OpenAI-compatible)        (host service)                 (model + compute)
+  agents)
+```
+
+1. Plug TokenStick into a USB-C port and connect a USB-C power supply.
+2. The host service loads a model onto the stick.
+3. Applications talk to a local endpoint, the same way they would talk to a cloud API.
+
+## Status
+
+TokenStick is in the design phase.
+
+- [x] Architecture and chip selection
+- [x] Bill of materials and board floorplan
+- [ ] Schematic and PCB layout
+- [ ] First prototypes and bring-up
+- [ ] Host runtime and local API
+- [ ] Published benchmarks
+- [ ] Crowdfunding campaign
+
+Details may change as the design moves from paper to hardware.
+
+## Roadmap
+
+- **Prototype:** working board, model loading over USB, first token-per-second numbers.
+- **Developer preview:** host runtime for Linux, local API endpoint, documentation.
+- **Launch:** crowdfunding campaign and first production batch.
+- **Later:** pooling several sticks on one host, more host platforms.
+
+## Get involved
+
+The project is early, and feedback on the design and the use cases is welcome. Design files, firmware and software will be published here as they become ready.
+
+---
+
+<p align="center">
+  <sub>TokenStick is an independent open hardware project. Product names mentioned belong to their respective owners.</sub>
+</p>

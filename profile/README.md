@@ -8,6 +8,14 @@
   Plug it in, point your tools at a local endpoint, keep your data on your desk.
 </p>
 
+<p align="center">
+  <img src="./assets/tokenstick-closed.jpg" alt="Concept render of TokenStick v1: an aluminum enclosure with cooling fins milled into the top, a USB-C data port on the near end and the tokenstick logotype on the side" width="100%">
+</p>
+
+<p align="center">
+  <sub>Concept render of the v1 enclosure. Not final hardware.</sub>
+</p>
+
 ---
 
 ## What is TokenStick?
@@ -37,6 +45,22 @@ The model runs entirely on the stick. Weights live in the accelerator's own memo
 | Use | Home and office |
 
 These are targets for the first revision, not measured results. Benchmarks will be published once prototypes are running.
+
+## Inside the enclosure
+
+<p align="center">
+  <img src="./assets/tokenstick-exploded.jpg" alt="Exploded concept render of TokenStick v1 in three layers: the finned aluminum lid on top, the board with the RK1828 and a USB-C port at each end in the middle, and the aluminum tray at the bottom" width="100%">
+</p>
+
+From top to bottom:
+
+- **Finned aluminum lid.** The fins are milled into the lid and a thermal pad couples the RK1828 to it, so the enclosure itself works as the heatsink. No fan is planned.
+- **Board.** A 6-layer PCB of about 85 × 35 mm. The RK1828 sits next to the data port, with the power stages along the rest of the board.
+- **Aluminum tray.** Carries the board on standoffs and closes the enclosure.
+
+There is a USB-C port at each end. **DATA** carries USB 3.0 to the host. **PWR** takes a USB Power Delivery supply, because the accelerator needs more power than a standard USB data port provides.
+
+The renders show the intended form and layout. Dimensions, component placement and finish may change before the first prototypes.
 
 ## How it works
 

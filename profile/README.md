@@ -74,6 +74,20 @@ The renders show the intended form and layout. Dimensions, component placement a
 2. The host service loads a model onto the stick.
 3. Applications talk to a local endpoint, the same way they would talk to a cloud API.
 
+## Repositories
+
+| Repository | What it holds | License |
+|---|---|---|
+| [tokenstick-hw](https://github.com/TokenStick/tokenstick-hw) | Hardware design files: KiCad schematic and PCB, RK1828 symbol and footprint, design notes, BOM draft | CERN-OHL-S v2 |
+| [tokenstick-host](https://github.com/TokenStick/tokenstick-host) | Host software in Rust: core library, `tokenstick` CLI, OpenAI-compatible server and the built-in web UI | Apache-2.0 |
+| [.github](https://github.com/TokenStick/.github) | This organization profile | |
+
+**Planned**
+
+- [ ] **tokenstick-models**: model conversion from Hugging Face to RKNN3, quantization recipes and published benchmark results. Opens when the dev kit runs its first benchmarks.
+- [ ] **tokenstick-fw**: device firmware packaging, signing and the USB boot and update flow. Opens with the first TokenStick board.
+- [ ] **tokenstick-docs**: user documentation and guides. Until then, docs live in the `docs/` folder of each repository.
+
 ## Status
 
 TokenStick is in the design phase. Nothing has been built or tested yet.
@@ -88,6 +102,7 @@ TokenStick is in the design phase. Nothing has been built or tested yet.
 - [x] USB section routed by hand in KiCad
 - [x] Enclosure concept and 3D renders
 - [x] Hardware files published in [tokenstick-hw](https://github.com/TokenStick/tokenstick-hw) under CERN-OHL-S v2
+- [x] Host software started in [tokenstick-host](https://github.com/TokenStick/tokenstick-host): CLI, OpenAI-compatible server and web UI on a simulated backend
 
 **In progress**
 
@@ -100,7 +115,7 @@ The power rail design waits on current and sequencing figures from the chip vend
 **Next**
 
 - [ ] First prototypes and bring-up
-- [ ] Host runtime and local API
+- [ ] Host runtime on real RK1828 hardware
 - [ ] Published benchmarks
 - [ ] Crowdfunding campaign
 

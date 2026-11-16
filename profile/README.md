@@ -74,6 +74,20 @@ The renders show the intended form and layout. Dimensions, component placement a
 2. The host service loads a model onto the stick.
 3. Applications talk to a local endpoint, the same way they would talk to a cloud API.
 
+## Host software preview
+
+The host software already runs on a simulated backend, so the CLI, the OpenAI-compatible API and the web UI can be built before the hardware exists. `tokenstick serve` starts the API and serves this UI in the browser.
+
+<p align="center">
+  <img src="./assets/ui-dashboard.png" alt="TokenStick web UI dashboard: device card, live temperature, power, NPU load and decode speed tiles, a temperature and power chart, throughput bars and a table of recent requests" width="100%">
+</p>
+<p align="center">
+  <img src="./assets/ui-playground.png" alt="TokenStick web UI playground: a streaming chat with per-reply token count, TTFT and tok/s, and a settings panel with model, system prompt, temperature, top-p, max tokens and live device readings" width="100%">
+</p>
+<p align="center">
+  <sub>Dashboard and Playground on the simulated backend. All numbers are placeholders, not RK1828 measurements.</sub>
+</p>
+
 ## Repositories
 
 | Repository | What it holds | License |
@@ -90,7 +104,7 @@ The renders show the intended form and layout. Dimensions, component placement a
 
 ## Status
 
-TokenStick is in the design phase. Nothing has been built or tested yet.
+The hardware is in the design phase. Nothing has been built or tested yet. The host software runs today on a simulated backend.
 
 **Done**
 
